@@ -1,0 +1,133 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+install.packages("ISLR")
+```
+```{r}
+library(ISLR)
+
+```
+```{r}
+datacredit <- Credit
+head(datacredit)
+```
+```
+
+```
+```{r}
+```
+#NOMER 1
+#median dan mean
+
+```{r}
+mean(datacredit$Rating)
+```
+
+
+```{r}
+mean(datacredit$Cards)
+```
+```{r}
+mean(datacredit$Age)
+```
+```{r}
+median(datacredit$Rating)
+```
+```{r}
+median(datacredit$Cards)
+```
+```{r}
+median(datacredit$Age)
+```
+```{r}
+library(lsr)
+
+```
+#NOMER 2
+#Mode of
+
+```{r}
+modeOf(datacredit$Gender)
+```
+```{r}
+modeOf(datacredit$Student)
+```
+```{r}
+modeOf(datacredit$Married)
+```
+#NOMER 3
+#Quartile 10,37,91
+```{r}
+quantile(x = datacredit$Education, probs = 0.1)
+```
+```{r}
+quantile(x = datacredit$Education, probs = 0.37)
+```
+```{r}
+quantile(x = datacredit$Education, probs = 0.91)
+```
+#nomer 4
+#Boxplot
+```{r}
+boxplot(datacredit$Balance)
+```
+#NOMER 5
+#Korelasi dan Limit
+```{r}
+dataAS <- data.frame(limit = datacredit$Limit, rating = datacredit$Rating)
+dataAS
+```
+```{r}
+AgexCards <- data.frame(age = datacredit$Age, cards = datacredit$Cards)
+AgexCards
+
+```
+```{r}
+
+IncomexEdu <- data.frame(income = datacredit$Income, education = datacredit$Education)
+IncomexEdu
+
+```
+```{r}
+plot(datacredit$Limit, datacredit$Rating)
+
+```
+```{r}
+plot(datacredit$Age, datacredit$Cards)
+
+```
+```{r}
+plot(datacredit$Income, datacredit$Education)
+```
+
+
+#Probabilitas
+
+Disebuah desa terdapat 2000 KK akan ada jatah sumbangan desa ada 100 kk kurang mampu,jika dibagikan sumbangan pada 10 KK secara acak,tentukan peluang terbaginya 5 KK yang mendapat jatah.
+
+```{r}
+dbinom(x = 5, size = 10,prob =1/10 )
+```
+
+
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
